@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="number" id="num" placeholder="enter the number " />
+    <button onclick="table()">generate</button>
+    <p id="table">result here</p>
+    <script>
+      function table() {
+        let n = document.getElementById("num").value;
+        let out = "";
+        for (let i = 1; i <= 10; i++) {
+          out += `${n} X ${i} = ${i * n} <br/>`;
+        }
+        document.getElementById("table").innerHTML = out;
+      }
+    </script>
+  </body>
+</html>

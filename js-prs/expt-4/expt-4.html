@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="s1" placeholder="enter str1" />
+    <input type="text" id="s2" placeholder="enter str2" /> <br /><br />
+    <button onclick="check()">check</button>
+    <p id="out"></p>
+
+    <script>
+      function check() {
+        let str1 = document.getElementById("s1").value;
+        let str2 = document.getElementById("s2").value;
+        let result = "";
+
+        if (str1 == str2) {
+          result += "str1 and str2 are case sensitively same ";
+        } else {
+          result += "str1 and str2 are case sensitively NOT same ";
+        }
+        result += "<br>";
+
+        if (str1.toLowerCase() === str2.toLowerCase()) {
+          result += "str1 and str2 are case insensitively same ";
+        } else {
+          result += "str1 and str2 are case insensitively NOT same ";
+        }
+        result += "<br>";
+
+        let regex = new RegExp("^" + str1 + "$", "i");
+        if (regex.test(str2)) {
+          result += "regexp test passed  ";
+        } else {
+          result += "regexp test not passed  ";
+        }
+        result += "<br>";
+
+        let cmp = str1.localeCompare(str2);
+        if (cmp === 0) {
+          result += "locally its equal  ";
+        } else if (cmp < 0) {
+          result += "s1 come before s2 ";
+        } else {
+          result += "s2 come before s1 ";
+        }
+        document.getElementById("out").innerHTML = result;
+      }
+    </script>
+  </body>
+</html>

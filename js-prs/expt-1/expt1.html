@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>area calculator</h1>
+    <form oninput="calculate()">
+      <select id="shape">
+        <option value="">----------</option>
+        <option value="triangle">triangle</option>
+        <option value="rectangle">rectangle</option>
+        <option value="circle">circle</option>
+      </select>
+      <br />
+      <br />
+      <input type="text" id="a" placeholder="enter value 1 " />
+      <br /><br />
+
+      <input type="text" id="b" placeholder="enter value 2 / if applicable " />
+
+      <p id="area">area =</p>
+    </form>
+
+    <script>
+      function calculate() {
+        let s = shape.value;
+        let x = +a.value;
+        let y = +b.value;
+        let result = "";
+        if (s == "triangle") {
+          result = 0.5 * x * y;
+        } else if (s == "rectangle") {
+          result = x * y;
+        } else if (s == "circle") {
+          result = Math.PI * x * x;
+        } else {
+          result = "invalid data";
+        }
+        document.getElementById("area").innerText = "area is : " + result;
+      }
+    </script>
+  </body>
+</html>

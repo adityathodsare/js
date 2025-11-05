@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="string" placeholder="string" /><br /><br />
+    <input type="text" id="replaceto" placeholder="replaceto" /><br /><br />
+    <input type="text" id="replacewith" placeholder="replacewith" />
+    <br /><br />
+
+    <button onclick="reverse()">reverse</button><br /><br />
+    <button onclick="replace()">replace</button><br /><br />
+    <button onclick="isPalindrome()">ispalindrome</button><br /><br />
+
+    <p id="out">result will be displayed here</p>
+
+    <br />
+
+    <script>
+      function reverse() {
+        let str = document.getElementById("string").value;
+        let reversed = str.split("").reverse().join("");
+        document.getElementById("out").innerHTML = "reversed= " + reversed;
+      }
+      function replace() {
+        let str = document.getElementById("string").value;
+        let replaceTo = document.getElementById("replaceto").value;
+        let replaceWith = document.getElementById("replacewith").value;
+        let newstr = str.replaceAll(replaceTo, replaceWith);
+        document.getElementById("out").innerHTML = "replaced = " + newstr;
+      }
+      function isPalindrome() {
+        let str = document.getElementById("string").value;
+        let reversed = str.split("").reverse().join("");
+        let ans = " ";
+        if (reversed === str) {
+          ans = "yes";
+        } else {
+          ans = "no";
+        }
+        document.getElementById("out").innerHTML = "palindrome  " + ans;
+      }
+    </script>
+  </body>
+</html>

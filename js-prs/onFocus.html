@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p>Enter your name:</p>
+    <input
+      type="text"
+      onmouseover="mouseOn(this)"
+      onmouseout="mouseOut(this)"
+      onfocus="myFunction(this)"
+    />
+
+    <p>When the input field gets focus, the background color changes.</p>
+
+    <script>
+      function mouseOn(x) {
+        x.style.background = "green";
+      }
+      function mouseOut(x) {
+        x.style.background = "black";
+      }
+      function myFunction(x) {
+        x.style.background = "yellow";
+      }
+    </script>
+  </body>
+</html>

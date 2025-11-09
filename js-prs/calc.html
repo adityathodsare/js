@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>simple calculator</h1>
+    <br />
+    <input type="text" id="display" /><br /><br />
+    <button onclick="displayOnScreen('1')">1</button>
+    <button onclick="displayOnScreen('2')">2</button>
+    <button onclick="displayOnScreen('3')">3</button>
+    <button onclick="displayOnScreen('/')">/</button><br /><br />
+    <button onclick="displayOnScreen('4')">4</button>
+    <button onclick="displayOnScreen('5')">5</button>
+    <button onclick="displayOnScreen('6')">6</button>
+    <button onclick="displayOnScreen('*')">*</button><br /><br />
+    <button onclick="displayOnScreen('7')">7</button>
+    <button onclick="displayOnScreen('8')">8</button>
+    <button onclick="displayOnScreen('9')">9</button>
+    <button onclick="displayOnScreen('+')">+</button><br /><br />
+    <button onclick="clearWindow()">c</button>
+    <button onclick="doSquare('display.value')">^2</button>
+    <button onclick="solve('display.value')">=</button>
+    <button onclick="displayOnScreen('-')">-</button><br /><br />
+
+    <script>
+      function displayOnScreen(x) {
+        display.value += x;
+      }
+      function doSquare(x) {
+        display.value = eval(`${x}*${x}`);
+      }
+      function clearWindow() {
+        display.value = "";
+      }
+      function solve(x) {
+        try {
+          display.value = eval(display.value);
+        } catch {
+          alert("Invalid input!");
+          display.value = "";
+        }
+      }
+    </script>
+  </body>
+</html>
